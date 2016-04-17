@@ -85,3 +85,6 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 MAX_PAGE = 100
+
+DB_HOST = "http://127.0.0.1"
+DB_PORT = 5984

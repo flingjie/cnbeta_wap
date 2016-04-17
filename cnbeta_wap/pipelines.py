@@ -5,11 +5,13 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import couchdb
+from scrapy.conf import settings
+
 
 
 class CnbetaWapPipeline(object):
     def __init__(self):
-        server = couchdb.Server()
+        server = couchdb.Server("{}:{}".format(settings["DB_HOST"], settings["DB_PORT"]))
         try:
             self.db = server['cnbeta']
         except Exception as e:
